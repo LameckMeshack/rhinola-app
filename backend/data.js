@@ -16,7 +16,6 @@ const data = {
   ],
   products: [
     {
-      _id: "1",
       name: "Maasai Coloured Crown",
       category: "Crown",
       image: "/images/p1.png",
@@ -28,7 +27,6 @@ const data = {
       description: "high quality Maasai beads products",
     },
     {
-      _id: "2",
       name: "Samburu Bracelet ",
       category: "Bracelets",
       image: "/images/p2.png",
@@ -40,7 +38,6 @@ const data = {
       description: "high quality Samburu products",
     },
     {
-      _id: "3",
       name: "Indegenous Beaded Crown",
       category: "Crown",
       image: "/images/p3.png",
@@ -52,7 +49,6 @@ const data = {
       description: "high quality Indegenous beads products",
     },
     {
-      _id: "4",
       name: "Maasai Men Necklace",
       category: "Necklace",
       image: "/images/p4.png",
@@ -64,7 +60,6 @@ const data = {
       description: "high quality Maasai beads products",
     },
     {
-      _id: "5",
       name: "Samburu Wpmen Necklace",
       category: "Necklace",
       image: "/images/p1.png",
@@ -76,7 +71,6 @@ const data = {
       description: "high quality  beads products",
     },
     {
-      _id: "6",
       name: "Indegineous Necklaces ",
       category: "Necklaces",
       image: "/images/p6.png",
