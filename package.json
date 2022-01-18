@@ -2,6 +2,12 @@
   "name": "rhinola",
   "type": "module",
   "version": "1.0.0",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
   "description": "rhinola shop",
   "main": "index.js",
   "scripts": {
@@ -18,7 +24,12 @@
   },
   "homepage": "https://github.com/RhinolamerSonwar/rhinola-app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^14.1.1",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.6"
   },
   "devDependencies": {
     "eslint": "^8.2.0",
