@@ -169,6 +169,10 @@ img.large {
 .rating span:last-child {
   color: #404040;
 }
+/*Alert*/
+.loading {
+  display: block !important;
+}
 .success {
   color: #20a020;
 }
