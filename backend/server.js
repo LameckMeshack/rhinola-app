@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
+import orderRouter from "./routers/orderRouter.js";
 
 dotenv.config();
 const app = express();
@@ -12,6 +13,9 @@ mongoose.connect("mongodb://localhost/rhinola_app");
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
+app.use("/api/products", productRouter);
+app.use("/api/order", orderRouter);
+
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
