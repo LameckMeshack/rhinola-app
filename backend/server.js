@@ -14,7 +14,7 @@ mongoose.connect("mongodb://localhost/rhinola_app");
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/products", productRouter);
-app.use("/api/order", orderRouter);
+app.use("/api/orders", orderRouter);
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
