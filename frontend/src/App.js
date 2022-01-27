@@ -12,6 +12,7 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import PrivateRoute from "./components/PrivateRoute";
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -49,7 +50,10 @@ function App() {
                     Sign Out
                   </Link>
                   <li>
-                    <Link to="/profile">User Profile</Link>
+                    <PrivateRoute
+                      path="/profile"
+                      component={ProfileScreen}
+                    ></PrivateRoute>
                   </li>
                   <Link to="orderHistory">Order History</Link>
                 </ul>
