@@ -13,6 +13,9 @@ import OrderScreen from "./screens/OrderScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
+import AdminRoute from "./components/AdminRoute";
+import ProductListScreen from "./screens/ProductListScreen";
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -46,16 +49,17 @@ function App() {
                   <i className="fa fa-caret-down"></i>{" "}
                 </Link>
                 <ul className="dropdown-content">
-                  <Link to="#signout" onClick={signoutHandler}>
-                    Sign Out
-                  </Link>
                   <li>
-                    <PrivateRoute
-                      path="/profile"
-                      component={ProfileScreen}
-                    ></PrivateRoute>
+                    <Link to="/profile">User Profile</Link>
                   </li>
-                  <Link to="orderHistory">Order History</Link>
+                  <li>
+                    <Link to="#signout" onClick={signoutHandler}>
+                      Sign Out
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="orderHistory">Order History</Link>
+                  </li>
                 </ul>
               </div>
             ) : (
@@ -97,6 +101,14 @@ function App() {
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
           <Route path="/profile" component={ProfileScreen}></Route>
           <Route path="/" component={HomeScreen} exact></Route>
+          <PrivateRoute
+            path="/profile"
+            component={ProfileScreen}
+          ></PrivateRoute>
+          <AdminRoute
+            path="/productlist"
+            component={ProductListScreen}
+          ></AdminRoute>
         </main>
 
         <footer className="row center">All Right Reserve Rhinola 2021</footer>
