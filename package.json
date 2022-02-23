@@ -34,6 +34,7 @@
   "devDependencies": {
     "eslint": "^8.2.0",
     "eslint-plugin-react": "^7.27.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "webpack-node-externals": "^3.0.0"
   }
 }
