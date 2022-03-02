@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 app.use(express.json()); //parsing json data in the body of request
 app.use(express.urlencoded({ extended: true }));
-mongoose.connect("mongodb://localhost/rhinola_app");
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/rhinola_app");
 
 app.use("/api/uploads", uploadRouter);
 app.use("/api/users", userRouter);
