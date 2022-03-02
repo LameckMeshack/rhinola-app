@@ -11,6 +11,7 @@
   "description": "rhinola shop",
   "main": "index.js",
   "scripts": {
+    "build":"cd frontend && npm install && npm run build",
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
@@ -37,5 +38,6 @@
     "eslint-plugin-react": "^7.27.1",
     "nodemon": "^2.0.15",
     "webpack-node-externals": "^3.0.0"
-  }
+  },
+  "engines": {"node": "16.13.2", "npm":"8.1.2"}
 }
