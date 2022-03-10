@@ -17,6 +17,7 @@ import AdminRoute from "./components/AdminRoute";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
+import UserListScreen from "./screens/UserListScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -120,6 +121,7 @@ function App() {
             path="/orderList"
             component={OrderListScreen}
           ></AdminRoute>
+          <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
         </main>
 
         <footer className="row center">All Right Reserve Rhinola 2021</footer>
