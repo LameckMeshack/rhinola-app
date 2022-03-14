@@ -7,13 +7,16 @@ const data = {
       email: "rhino@example.com",
       password: bcryptjs.hashSync("1234", 8),
       isAdmin: true,
+      /* adding this part "seller" */
+      seller: {
+        name: "Puma",
+        logo: "/images/logo1.png",
+        description: "best seller",
+        rating: 4.5,
+        numReviews: 120,
+      },
     },
-    // {
-    //   name: "Admin",
-    //   email: "admin@example.com",
-    //   password: bcryptjs.hashSync("1234", 8),
-    //   isAdmin: true,
-    // },
+
     {
       name: "Scaca",
       email: "scaca@example.com",
