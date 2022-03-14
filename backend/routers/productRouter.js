@@ -48,8 +48,6 @@ productRouter.get(
 productRouter.post(
   "/",
   isAuth,
-  isAdmin,
-  // isSeller,
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
@@ -72,7 +70,6 @@ productRouter.post(
 productRouter.put(
   "/:id",
   isAuth,
-  isAdmin,
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
