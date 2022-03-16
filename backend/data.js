@@ -7,7 +7,7 @@ const data = {
       email: "rhino@example.com",
       password: bcryptjs.hashSync("1234", 8),
       isAdmin: true,
-      /* adding this part "seller" */
+      isSeller: true,
       seller: {
         name: "Puma",
         logo: "/images/logo1.png",
