@@ -11,7 +11,7 @@
   "description": "rhinola shop",
   "main": "index.js",
   "scripts": {
-    "build":"cd frontend && npm install && npm run build",
+    "build": "cd frontend && npm install && npm run build",
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
     "mongoose": "^6.1.6",
     "multer": "^1.4.4"
   },
@@ -39,5 +40,8 @@
     "nodemon": "^2.0.15",
     "webpack-node-externals": "^3.0.0"
   },
-  "engines": {"node": "16.13.2", "npm":"8.1.2"}
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
+  }
 }
