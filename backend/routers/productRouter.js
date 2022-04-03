@@ -29,6 +29,7 @@ productRouter.get(
     const sellerFilter = seller ? { seller } : {};
     const categoryFilter = category ? { category } : {};
     const priceFilter = min && max ? { price: { $gte: min, $lte: max } } : {};
+
     const ratingFilter = rating ? { rating: { $gte: rating } } : {};
     const sortOrder =
       order === "lowest"
