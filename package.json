@@ -24,17 +24,6 @@
     "url": "https://github.com/RhinolamerSonwar/rhinola-app/issues"
   },
   "homepage": "https://github.com/RhinolamerSonwar/rhinola-app#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^14.1.1",
-    "express": "^4.17.1",
-    "express-async-handler": "^1.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "mailgun-js": "^0.22.0",
-    "mongoose": "^6.1.6",
-    "multer": "^1.4.4",
-    "socket.io": "^4.4.1"
-  },
   "devDependencies": {
     "eslint": "^8.2.0",
     "eslint-plugin-react": "^7.27.1",
@@ -44,5 +33,16 @@
   "engines": {
     "node": "16.13.2",
     "npm": "8.1.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^6.3.1",
+    "multer": "^1.4.4",
+    "socket.io": "^4.5.0"
   }
 }

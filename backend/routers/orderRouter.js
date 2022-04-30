@@ -139,23 +139,28 @@ orderRouter.put(
         email_address: req.body.email_address,
       };
       const updatedOrder = await order.save();
-      mailgun()
-        .messages()
-        .send(
-          {
-            from: "Rhinola <rhinolacn@mg.yourdomain.com>",
-            to: `${order.user.name} <${order.user.email}>`,
-            subject: `New order ${order._id}`,
-            html: payOrderEmailTemplate(order),
-          },
-          (error, body) => {
-            if (error) {
-              console.log(error);
-            } else {
-              console.log(body);
+      try {
+        mailgun()
+          .messages()
+          .send(
+            {
+              from: "Rhinola <rhinolacn@mg.yourdomain.com>",
+              to: `${order.user.name} <${order.user.email}>`,
+              subject: `New order ${order._id}`,
+              html: payOrderEmailTemplate(order),
+            },
+            (error, body) => {
+              if (error) {
+                console.log(error);
+              } else {
+                console.log(body);
+              }
             }
-          }
-        );
+          );
+      } catch (error) {
+        console.log(error);
+      }
+
       res.send({ message: "Order Paid", order: updatedOrder });
     } else {
       res.status(404).send({ message: "Order Not Found" });
