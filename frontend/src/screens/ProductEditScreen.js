@@ -5,9 +5,15 @@ import { detailsProduct, updateProduct } from "../actions/productActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+import {
+  useNavigate,
+  useParams,
+} from "../../node_modules/react-router-dom/index";
 
 export default function ProductEditScreen(props) {
-  const productId = props.match.params.id;
+  const navigate = useNavigate();
+  const params = useParams();
+  const { id: productId } = params;
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
@@ -29,7 +35,7 @@ export default function ProductEditScreen(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     if (successUpdate) {
-      props.history.push("/productlist");
+      navigate("/productlist");
     }
     if (!product || product._id !== productId || successUpdate) {
       dispatch({ type: PRODUCT_UPDATE_RESET });
@@ -43,7 +49,7 @@ export default function ProductEditScreen(props) {
       setBrand(product.brand);
       setDescription(product.description);
     }
-  }, [product, dispatch, productId, successUpdate, props.history]);
+  }, [product, dispatch, productId, successUpdate, navigate]);
   const submitHandler = (e) => {
     e.preventDefault();
     // TODO: dispatch update product

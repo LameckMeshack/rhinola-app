@@ -6,11 +6,13 @@ import CheckoutSteps from "../components/CheckoutSteps";
 import { ORDER_CREATE_RESET } from "../constants/orderConstants";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import { useNavigate } from "../../node_modules/react-router-dom/index";
 
 export default function PlaceOrderScreen(props) {
+  const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   if (!cart.paymentMethod) {
-    props.history.push("/payment");
+    navigate("/payment");
   }
   const orderCreate = useSelector((state) => state.orderCreate);
   const { loading, success, error, order } = orderCreate;
@@ -27,10 +29,10 @@ export default function PlaceOrderScreen(props) {
   };
   useEffect(() => {
     if (success) {
-      props.history.push(`/order/${order._id}`);
+      navigate(`/order/${order._id}`);
       dispatch({ type: ORDER_CREATE_RESET });
     }
-  }, [dispatch, order, props.history, success]);
+  }, [dispatch, order, navigate, success]);
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>

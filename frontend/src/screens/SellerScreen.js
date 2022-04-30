@@ -6,9 +6,11 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
 import Rating from "../components/Rating";
+import { useParams } from "../../node_modules/react-router-dom/index";
 
 export default function SellerScreen(props) {
-  const sellerId = props.match.params.id;
+  const params = useParams();
+  const { id: sellerId } = params;
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
 
